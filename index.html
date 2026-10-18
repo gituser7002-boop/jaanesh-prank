@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚠️ BIO-HAZARD WARNING: Jaanesh Fart Incident Command Center</title>
+  <meta name="description" content="Official Air Quality & Methane Disaster Tracking Portal for Jaanesh's Lethal Flatulence. Enter at your own risk.">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Toxic Canvas Background -->
+  <canvas id="fartCanvas"></canvas>
+
+  <!-- Gas Mask Intro Overlay -->
+  <div id="introModal" class="intro-modal">
+    <div class="intro-content">
+      <div class="hazard-stripe top"></div>
+      <div class="hazard-icon-pulse">☣️</div>
+      <h1 class="glitch-text" data-text="WARNING: LETHAL GAS ZONE">WARNING: LETHAL GAS ZONE</h1>
+      <p class="intro-subtitle">Methane levels detected: <span class="highlight-ppm">999,999 PPM</span></p>
+      <p class="intro-desc">
+        You are entering the immediate fallout perimeter of <strong>Jaanesh's digestive system</strong>.
+        Ear protection & Gas Masks are strictly mandatory.
+      </p>
+      <div class="intro-actions">
+        <button id="enterBtn" class="btn-primary-toxic">
+          <span class="btn-icon">🤿</span> PUT ON GAS MASK & ENTER
+        </button>
+      </div>
+      <p class="intro-note">⚠️ Turn on audio for full atmospheric destruction</p>
+      <div class="hazard-stripe bottom"></div>
+    </div>
+  </div>
+
+  <!-- Header Banner -->
+  <header class="site-header">
+    <div class="hazard-strip"></div>
+    <div class="header-inner container">
+      <div class="logo-group">
+        <div class="toxic-sign">☣️</div>
+        <div>
+          <div class="badge-alert">CRITICAL ALERT: DEFCON BROWN</div>
+          <h1 class="main-title">JAANESH <span class="green-glow">FART</span> ZONE</h1>
+        </div>
+      </div>
+
+      <div class="live-aqi-box">
+        <div class="aqi-label">LIVE AIR QUALITY INDEX</div>
+        <div class="aqi-meter-row">
+          <span class="aqi-value" id="aqiCounter">9,842</span>
+          <span class="aqi-status">☠️ UNLIVABLE</span>
+        </div>
+        <div class="aqi-subtext">Source: Jaanesh's Lower Intestines</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Floating Audio Mute / Panic Control -->
+  <div class="panic-dock">
+    <button id="sirenBtn" class="dock-btn" title="Emergency Siren">🚨 SIREN</button>
+    <button id="randomFartBtn" class="dock-btn pulse" title="Quick Fart">💨 INSTA-FART</button>
+    <button id="muteBtn" class="dock-btn" title="Toggle Sound">🔊 AUDIO ON</button>
+  </div>
+
+  <main class="main-content container">
+
+    <!-- HERO SECTION: THE JAANESH FART-O-TRON 3000 -->
+    <section class="hero-section">
+      <div class="hero-card glass-panel">
+        <div class="card-badge">THE MAIN OFFENDER • WANTED WORLDWIDE</div>
+
+        <div class="fart-o-tron-container">
+          <div class="target-radar-ring"></div>
+          <div class="target-crosshairs"></div>
+
+          <!-- Clickable Jaanesh Avatar Button -->
+          <div id="jaaneshBigBtn" class="avatar-interactive-wrapper" role="button" tabindex="0" title="Click Jaanesh to unleash gas!">
+            <img src="./WhatsApp Image 2026-10-18 at 9.30.46 AM.jpeg" alt="Jaanesh Prime Suspect" class="jaanesh-avatar-img">
+            <div class="avatar-gas-cloud"></div>
+            <div class="tap-hint">⚡ TAP JAANESH TO DETONATE ⚡</div>
+          </div>
+        </div>
+
+        <div class="stats-dashboard">
+          <div class="stat-pill">
+            <span class="stat-num" id="fartScore">0</span>
+            <span class="stat-title">Farts Unleashed</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-num" id="ozoneTear">0.0</span>
+            <span class="stat-title">sq km Ozone Destroyed</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-num" id="evacueeCount">0</span>
+            <span class="stat-title">Innocent Bystanders Fled</span>
+          </div>
+        </div>
+
+        <div class="achievement-banner" id="achievementBanner">
+          <span class="trophy">🏆</span> <span id="achievementText">Achievement: Click Jaanesh to trigger his first blast!</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE FART SOUNDBOARD -->
+    <section class="section-container">
+      <div class="section-header">
+        <span class="section-tag">CUSTOM ACOUSTIC WARFARE</span>
+        <h2 class="section-title">🔊 JAANESH'S FART SOUNDBOARD</h2>
+        <p class="section-desc">Handcrafted frequency modulations recorded straight from Jaanesh's post-meal operations.</p>
+      </div>
+
+      <div class="soundboard-grid" id="soundboardGrid">
+        <!-- Generated dynamically in app.js for full sound control -->
+      </div>
+    </section>
+
+    <!-- CAUGHT ON CCTV: VIDEO EVIDENCE ARCHIVE -->
+    <section class="section-container">
+      <div class="section-header">
+        <span class="section-tag">SURVEILLANCE ARCHIVE</span>
+        <h2 class="section-title">📹 CAUGHT ON CAMERA: THE INCIDENTS</h2>
+        <p class="section-desc">Classified forensic video footage capturing the exact moments of bio-terror.</p>
+      </div>
+
+      <div class="video-grid">
+        <!-- Video 1 -->
+        <div class="video-card glass-panel">
+          <div class="video-header">
+            <span class="cctv-rec">🔴 REC [CAM 01]</span>
+            <span class="incident-code">INCIDENT #9021</span>
+          </div>
+          <div class="video-wrapper">
+            <video src="./WhatsApp Video 2026-10-18 at 9.29.55 AM.mp4" controls preload="metadata"></video>
+            <div class="video-scanlines"></div>
+            <div class="gas-meter-overlay">METHANE DENSITY: 98.4%</div>
+          </div>
+          <div class="video-footer">
+            <div class="video-caption">Suspect caught exhibiting suspicious digestive pressure.</div>
+            <button class="btn-action-fart" onclick="window.playFartSound('wet')">💥 ADD FART SOUNDTRACK</button>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-card glass-panel">
+          <div class="video-header">
+            <span class="cctv-rec">🔴 REC [CAM 02]</span>
+            <span class="incident-code">INCIDENT #9022</span>
+          </div>
+          <div class="video-wrapper">
+            <video src="./WhatsApp Video 2026-10-18 at 9.30.48 AM.mp4" controls preload="metadata"></video>
+            <div class="video-scanlines"></div>
+            <div class="gas-meter-overlay">DECIBEL LEVEL: 114 dB</div>
+          </div>
+          <div class="video-footer">
+            <div class="video-caption">Eyewitnesses reported vibrations in the local tectonic plates.</div>
+            <button class="btn-action-fart" onclick="window.playFartSound('atomic')">💥 ADD ATOMIC DETONATION</button>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-card glass-panel">
+          <div class="video-header">
+            <span class="cctv-rec">🔴 REC [CAM 03]</span>
+            <span class="incident-code">INCIDENT #9023</span>
+          </div>
+          <div class="video-wrapper">
+            <video src="./WhatsApp Video 2026-10-18 at 9.30.53 AM.mp4" controls preload="metadata"></video>
+            <div class="video-scanlines"></div>
+            <div class="gas-meter-overlay">SULPHUR LEVEL: CRITICAL</div>
+          </div>
+          <div class="video-footer">
+            <div class="video-caption">Room oxygen evacuated in approximately 2.3 seconds.</div>
+            <button class="btn-action-fart" onclick="window.playFartSound('squeak')">💥 ADD SQUEAKER FX</button>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="video-card glass-panel">
+          <div class="video-header">
+            <span class="cctv-rec">🔴 REC [CAM 04]</span>
+            <span class="incident-code">INCIDENT #9024</span>
+          </div>
+          <div class="video-wrapper">
+            <video src="./WhatsApp Video 2026-10-18 at 9.31.03 AM.mp4" controls preload="metadata"></video>
+            <div class="video-scanlines"></div>
+            <div class="gas-meter-overlay">AIR QUALITY: DEADLY</div>
+          </div>
+          <div class="video-footer">
+            <div class="video-caption">Thermal infrared imaging confirms total thermal exhaust.</div>
+            <button class="btn-action-fart" onclick="window.playFartSound('machineGun')">💥 ADD RAPID RIP</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROGUES GALLERY: JAANESH EVIDENCE MUGSHOTS -->
+    <section class="section-container">
+      <div class="section-header">
+        <span class="section-tag">DOSSIER & EVIDENCE</span>
+        <h2 class="section-title">📂 JAANESH'S HALL OF INFAMY</h2>
+        <p class="section-desc">Classified photographic evidence documented prior to catastrophic odor dispersal.</p>
+      </div>
+
+      <div class="mugshot-grid">
+        <!-- Photo 1 -->
+        <div class="mugshot-card glass-panel">
+          <div class="card-stamp danger">WANTED</div>
+          <div class="photo-frame">
+            <img src="./WhatsApp Image 2026-10-18 at 9.30.49 AM.jpeg" alt="Jaanesh Evidence 1" loading="lazy">
+          </div>
+          <div class="mugshot-info">
+            <div class="mugshot-title">MUGSHOT #01: "The Smug Squeaker"</div>
+            <p class="mugshot-desc">Smiling innocent right after releasing a silent 900-calorie sulfur blast under the table.</p>
+            <div class="threat-level">Odor Toxicity: <span>99.8%</span></div>
+          </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="mugshot-card glass-panel">
+          <div class="card-stamp toxic">BIO-HAZARD</div>
+          <div class="photo-frame">
+            <img src="./WhatsApp Image 2026-10-18 at 9.31.04 AM.jpeg" alt="Jaanesh Evidence 2" loading="lazy">
+          </div>
+          <div class="mugshot-info">
+            <div class="mugshot-title">MUGSHOT #02: "Target Acquired"</div>
+            <p class="mugshot-desc">Locking eyes with his friends seconds before clearing out the whole classroom.</p>
+            <div class="threat-level">Blast Radius: <span>45 Meters</span></div>
+          </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="mugshot-card glass-panel">
+          <div class="card-stamp extreme">EXTREME RISK</div>
+          <div class="photo-frame">
+            <img src="./WhatsApp Image 2026-10-18 at 9.31.05 AM.jpeg" alt="Jaanesh Evidence 3" loading="lazy">
+          </div>
+          <div class="mugshot-info">
+            <div class="mugshot-title">MUGSHOT #03: "Pre-Launch Focus"</div>
+            <p class="mugshot-desc">Deep in thought, calculating the aerodynamic trajectory of his upcoming flatulence.</p>
+            <div class="threat-level">Decibels: <span>118 dB</span></div>
+          </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="mugshot-card glass-panel">
+          <div class="card-stamp lethal">DEFCON 1</div>
+          <div class="photo-frame">
+            <img src="./WhatsApp Image 2026-10-18 at 9.31.06 AM.jpeg" alt="Jaanesh Evidence 4" loading="lazy">
+          </div>
+          <div class="mugshot-info">
+            <div class="mugshot-title">MUGSHOT #04: "Post-Biryani Disaster"</div>
+            <p class="mugshot-desc">The biological stomach reactor reached critical meltdown temperatures.</p>
+            <div class="threat-level">Vegetation Wilt: <span>Instant</span></div>
+          </div>
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="mugshot-card glass-panel">
+          <div class="card-stamp toxic">SERIAL RIPPER</div>
+          <div class="photo-frame">
+            <img src="./WhatsApp Image 2026-10-18 at 9.31.08 AM.jpeg" alt="Jaanesh Evidence 5" loading="lazy">
+          </div>
+          <div class="mugshot-info">
+            <div class="mugshot-title">MUGSHOT #05: "The Unapologetic"</div>
+            <p class="mugshot-desc">"Bro it wasn't me, it was the chair squeaking!" — Jaanesh, lying under oath.</p>
+            <div class="threat-level">Lie Credibility: <span>0.0%</span></div>
+          </div>
+        </div>
+
+        <!-- Photo 6 -->
+        <div class="mugshot-card glass-panel">
+          <div class="card-stamp danger">LEGENDARY</div>
+          <div class="photo-frame">
+            <img src="./WhatsApp Image 2026-10-18 at 9.30.46 AM.jpeg" alt="Jaanesh Evidence 6" loading="lazy">
+          </div>
+          <div class="mugshot-info">
+            <div class="mugshot-title">MUGSHOT #06: "The Fart Commander"</div>
+            <p class="mugshot-desc">The undisputed king of thunderous room clearing. Crowned by unanimous coughing.</p>
+            <div class="threat-level">Survivability: <span>Unlikely</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE METHANE SENSOR SIMULATOR -->
+    <section class="section-container">
+      <div class="gas-detector-box glass-panel">
+        <div class="detector-left">
+          <h3>⚡ LIVE DIGESTIVE RADAR SCANNER</h3>
+          <p>Real-time telemetry measuring Jaanesh's intestinal gas volume and vibration frequencies.</p>
+          <div class="radar-gauge-track">
+            <div class="radar-gauge-bar" id="gasGaugeBar"></div>
+          </div>
+          <div class="gauge-labels">
+            <span>SAFE</span>
+            <span>CHILLI DOSE</span>
+            <span>METHANE CRISIS</span>
+            <span class="hazard-text">JAANESH INCOMING</span>
+          </div>
+        </div>
+        <div class="detector-right">
+          <button id="detonateTestBtn" class="btn-huge-detonate">
+            ☢️ SIMULATE MAXIMUM BURST
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VICTIM TESTIMONIALS -->
+    <section class="section-container">
+      <div class="section-header">
+        <span class="section-tag">WITNESS STATEMENTS</span>
+        <h2 class="section-title">🗣️ WHAT SURVIVORS SAY</h2>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card glass-panel">
+          <div class="stars">⭐⭐⭐⭐⭐ (5/5 Stink Stars)</div>
+          <p class="review-quote">"Jaanesh let one rip in the auto rickshaw. The driver jumped out while the vehicle was still moving at 40 km/h."</p>
+          <div class="reviewer">— Traumatized Best Friend</div>
+        </div>
+
+        <div class="review-card glass-panel">
+          <div class="stars">⭐⭐⭐⭐⭐ (10/10 Lethality)</div>
+          <p class="review-quote">"I opened the door to his room and my eyes watered so bad I thought I was getting baptized."</p>
+          <div class="reviewer">— Anonymous Roommate</div>
+        </div>
+
+        <div class="review-card glass-panel">
+          <div class="stars">⭐⭐⭐⭐⭐ (Scientific Marvel)</div>
+          <p class="review-quote">"We recorded an earthquake of 4.2 on the Richter scale. Turns out it was just Jaanesh coughing and farting at the same time."</p>
+          <div class="reviewer">— State Geological Survey</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFICIAL BIOHAZARD CITATION GENERATOR -->
+    <section class="section-container citation-section">
+      <div class="citation-card glass-panel" id="citationBox">
+        <div class="citation-border">
+          <div class="citation-header">
+            <div class="citation-seal">🦨</div>
+            <h2>OFFICIAL NOTICE OF BIO-HAZARDOUS FLATULENCE</h2>
+            <div class="citation-code">CITATION #FART-2026-JAANESH</div>
+          </div>
+          <div class="citation-body">
+            <p><strong>ACCUSED PARTY:</strong> Jaanesh "The Thunder" Thakkapaduvar</p>
+            <p><strong>CHARGE:</strong> Unlawful discharge of toxic methane gas without a permit, violating Clean Air Acts in all 7 continents.</p>
+            <p><strong>EVIDENCE:</strong> Multiple documented squeaks, rumbles, and tear gas grade odors.</p>
+            <p><strong>SENTENCE:</strong> Must eat charcoal tablets for 30 days and provide scented candles to all nearby victims.</p>
+          </div>
+          <div class="citation-footer">
+            <button id="stampCitationBtn" class="btn-stamp">📑 STAMP GUILTY & SHARE</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toxic Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>Dedicated with immense love, laughs, and air freshener to <strong>Jaanesh</strong> ❤️💨</p>
+      <p class="footer-fineprint">No ozone layers were permanently harmed in the making of this prank website (probably).</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
